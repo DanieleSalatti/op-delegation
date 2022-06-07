@@ -30,7 +30,7 @@ const { utils } = require("ethers");
 **/
 
 export default function Balance(props) {
-  const [dollarMode, setDollarMode] = useState(true);
+  const [dollarMode, setDollarMode] = useState(false);
 
   const balance = useBalance(props.provider, props.address);
   let floatBalance = parseFloat("0.00");
@@ -51,6 +51,8 @@ export default function Balance(props) {
 
   if (dollarMode) {
     displayBalance = "$" + (floatBalance * price).toFixed(2);
+  } else {
+    displayBalance = floatBalance.toFixed(4) + " Ξ";
   }
 
   return (
