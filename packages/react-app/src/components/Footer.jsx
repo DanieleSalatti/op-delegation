@@ -6,11 +6,11 @@ import React from "react";
 export default function ScaffoldFooter() {
   const { Footer } = Layout;
   return (
-    <Footer style={{ textAlign: "center", background: "transparent" }}>
+    <Footer style={{ textAlign: "center", background: "transparent", marginTop: 24 }}>
       <p>
-        Created by the{" "}
+        Created by{" "}
         <a href="https://danielesalatti.com" target="_blank">
-          Daniele Salatti
+          Daniele Salatti | salatti.eth
         </a>{" "}
         using{" "}
         <a href="https://github.com/scaffold-eth/scaffold-eth" target="_blank">

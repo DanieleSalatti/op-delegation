@@ -42,6 +42,14 @@ export default function ExampleUI({
         <Address address={currentDelegate} ensProvider={mainnetProvider} blockexplorer={blockexplorer} fontSize={16} />
         <Divider />
         <div style={{ margin: 8 }}>
+          <h2>Change delegate</h2>
+          <p style={{ marginTop: 8 }}>
+            Want to change delegate? See delegates{" "}
+            <a href="https://app.optimism.io/delegates" target="_blank">
+              here
+            </a>{" "}
+            and use the input below to set a new one. You can use an Ethereum address ("0x...") or an ENS name.
+          </p>
           <AddressInput
             ensProvider={mainnetProvider}
             onChange={setNewDelegate}
