@@ -297,6 +297,7 @@ function App(props) {
             writeContracts={writeContracts}
             readContracts={readContracts}
             blockExplorer={blockExplorer}
+            loadWeb3Modal={loadWeb3Modal}
           />
         </Route>
       </Switch>
