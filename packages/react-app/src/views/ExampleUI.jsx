@@ -1,9 +1,7 @@
-import { Button, Card, DatePicker, Divider, Input, Progress, Slider, Spin, Switch } from "antd";
+import { Button, Divider } from "antd";
 import React, { useEffect, useState } from "react";
-import { utils } from "ethers";
-import { SyncOutlined } from "@ant-design/icons";
 
-import { Address, Balance, Events, AddressInput } from "../components";
+import { Address, AddressInput } from "../components";
 
 export default function ExampleUI({
   address,
@@ -58,8 +56,9 @@ export default function ExampleUI({
                 <a href="https://app.optimism.io/delegates" target="_blank">
                   here
                 </a>{" "}
-                and use the input below to set a new one. You can use an Ethereum address ("0x...") or an ENS name.
+                and use the input below to set a new one.
               </p>
+              <p>You can use an Ethereum address ("0x...") or an ENS name (e.g. "salatti.eth").</p>
               <AddressInput
                 ensProvider={mainnetProvider}
                 onChange={setNewDelegate}

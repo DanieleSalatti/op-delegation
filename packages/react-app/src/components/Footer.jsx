@@ -18,9 +18,18 @@ export default function ScaffoldFooter() {
         </a>
       </p>
       <p>
-        <a href="https://github.com/DanieleSalatti/op-delegation" target="_blank">
-          code
+        If you have any questions or a feature you would like implemented, please reach out to me on Twitter at{" "}
+        <a href="https://twitter.com/DanieleSalatti" target="_blank">
+          @DanieleSalatti
         </a>
+        .
+      </p>
+      <p>
+        You can also find the code for this project{" "}
+        <a href="https://github.com/DanieleSalatti/op-delegation" target="_blank">
+          on GitHub
+        </a>
+        .
       </p>
     </Footer>
   );
