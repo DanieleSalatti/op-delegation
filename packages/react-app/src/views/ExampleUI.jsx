@@ -66,6 +66,7 @@ export default function ExampleUI({
                 placeholder="Enter address or ENS name"
               />
               <Button
+                className="plausible-event-name=delegate"
                 style={{ marginTop: 8 }}
                 onClick={async () => {
                   /* look how you call setPurpose on your contract: */
