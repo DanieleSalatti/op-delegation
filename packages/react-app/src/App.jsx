@@ -216,11 +216,7 @@ function App(props) {
   return (
     <div className="App">
       {/* ✏️ Edit the header and change the title to your project name */}
-      <Header
-        title="OP Delegation"
-        link="https://github.com/DanieleSalatti/op-delegation"
-        subTitle="Check and update your OP delegate"
-      >
+      <Header title="OP Delegation" link="/" subTitle="Check and update your OP delegate">
         {/* 👨‍💼 Your account is in the top right with a wallet at connect options */}
         <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", flex: 1 }}>
