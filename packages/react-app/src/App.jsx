@@ -1,36 +1,17 @@
-import { Button, Col, Menu, Row } from "antd";
+import { Menu } from "antd";
 import "antd/dist/antd.css";
-import {
-  useBalance,
-  useContractLoader,
-  useContractReader,
-  useGasPrice,
-  useOnBlock,
-  useUserProviderAndSigner,
-} from "eth-hooks";
+import { useBalance, useContractLoader, useGasPrice, useOnBlock, useUserProviderAndSigner } from "eth-hooks";
 import { useExchangeEthPrice } from "eth-hooks/dapps/dex";
 import React, { useCallback, useEffect, useState } from "react";
 import { Link, Route, Switch, useLocation } from "react-router-dom";
 import "./App.css";
-import {
-  Account,
-  Contract,
-  Faucet,
-  GasGauge,
-  Header,
-  Ramp,
-  ThemeSwitch,
-  NetworkDisplay,
-  FaucetHint,
-  NetworkSwitch,
-  Footer,
-} from "./components";
-import { NETWORKS, ALCHEMY_KEY } from "./constants";
+import { Account, Footer, Header, NetworkDisplay, NetworkSwitch, ThemeSwitch } from "./components";
+import { ALCHEMY_KEY, NETWORKS } from "./constants";
 import externalContracts from "./contracts/external_contracts";
 // contracts
 import { Transactor, Web3ModalSetup } from "./helpers";
-import { Home, ExampleUI, Hints, Subgraph } from "./views";
 import { useStaticJsonRPC } from "./hooks";
+import { ExampleUI, Stats } from "./views";
 
 const { ethers } = require("ethers");
 /*
@@ -232,8 +213,6 @@ function App(props) {
     }
   }, [loadWeb3Modal]);
 
-  const faucetAvailable = localProvider && localProvider.connection && targetNetwork.name.indexOf("local") !== -1;
-
   return (
     <div className="App">
       {/* ✏️ Edit the header and change the title to your project name */}
@@ -277,15 +256,18 @@ function App(props) {
         logoutOfWeb3Modal={logoutOfWeb3Modal}
         USE_NETWORK_SELECTOR={USE_NETWORK_SELECTOR}
       />
-      {/*
+
       <Menu style={{ textAlign: "center", marginTop: 20 }} selectedKeys={[location.pathname]} mode="horizontal">
         <Menu.Item key="/">
           <Link to="/">OP Delegation</Link>
         </Menu.Item>
+        <Menu.Item key="/stats">
+          <Link to="/stats">Stats</Link>
+        </Menu.Item>
       </Menu>
-      */}
+
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <ExampleUI
             address={address}
             userSigner={userSigner}
@@ -299,6 +281,9 @@ function App(props) {
             blockExplorer={blockExplorer}
             loadWeb3Modal={loadWeb3Modal}
           />
+        </Route>
+        <Route exact path="/stats">
+          <Stats />
         </Route>
       </Switch>
 
